@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem "money-rails"
 gem 'carrierwave'
-gem "fog"
+gem 'fog'
 gem "mini_magick"
 gem 'puma'
 gem "rails_12factor", group: :production
