@@ -5,6 +5,18 @@ class OrdersController < ApplicationController
   end
 
   def update
+
+    order_form = OrderForm.new(current_order, params[:order])
+    # current_order.shipping_total = params['order']['shipping_total']
+    # current_order.save
+    if order_form.save
+      # session[:order_number] = nil
+      redirect_to cart_path(order_form.order.number)
+    end
+  end
+
+  def finalize
+
     order_form = OrderForm.new(current_order, params[:order])
     if order_form.save
       session[:order_number] = nil
@@ -12,7 +24,4 @@ class OrdersController < ApplicationController
     end
   end
 
-  def update_total
-
-  end
 end

@@ -36,9 +36,9 @@
       <h4 class='brand'>Shipping Option</h4>
       <div class='shipping-options well'>
         <h3>USPS</h3>
-        <%#= form_tag cart_path, method: :put do %>
+        <%#= form_tag "/orders/update_total", method: :post do %>
           <% @usps.each do |rate| %>
-            <%= radio_button_tag "shipping", rate[1], false, class: "shipping-button" %>
+            <%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %>
             <span>
               <%= rate[0] %>
               <%= format_money(rate[1]) %>
@@ -46,16 +46,16 @@
           <% end %>
           <h3>FEDEX</h3>
           <% @fedex.each do |rate| %>
-            <%= radio_button_tag "shipping", rate[1], false, class: "shipping-button" %>
+            <%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %>
             <span>
               <%= rate[0] %>:
               <%= format_money(rate[1]) %>
             </span><br>
           <% end %>
-          <%= submit_tag "Update Total", class: "btn btn-default" %>
-
+          <%= f.submit "Update Total", class: "btn btn-default" %>
+        <%# end %>
       </div>
-      <%= f.submit "Checkout", class: "btn btn-success btn-block" %>
+      <%#= f.submit "Checkout", class: "btn btn-success btn-block" %>
     </div>
 
   <% end %>

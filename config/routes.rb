@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "/cart",    to: "cart#create"
 
   post "/orders/update_total", to: "orders#update_total"
+  post "/finalize",     to: "orders#finalize", as: :complete_order
   get  "/orders/:number",  to: "orders#show", as: :order
   patch "/orders/:number", to: "orders#update"
 

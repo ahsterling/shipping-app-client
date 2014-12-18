@@ -7,7 +7,9 @@ class CartController < ApplicationController
   end
 
   def show
-    zip = current_order.address.postal_code
+    if current_order.address
+      zip = current_order.address.postal_code
+    end
     total_weight = 0
     current_order.items.each do |item|
       total_weight += item.product.weight
@@ -20,6 +22,6 @@ class CartController < ApplicationController
   end
 
   def update
-    
+
   end
 end
