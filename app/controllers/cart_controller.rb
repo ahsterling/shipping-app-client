@@ -7,5 +7,15 @@ class CartController < ApplicationController
   end
 
   def show
+    zip = current_order.address.postal_code
+    total_weight = 0
+    current_order.items.each do |item|
+      total_weight += item.product.weight
+    end
+    total_weight = total_weight * 16
+    rates = HTTParty.get("http://ishipit.herokuapp.com/search?package_info[weight]=#{total_weight}&package_info[dest_zip]=#{zip}").parsed_response
+    @usps = rates['usps']
+    @fedex = rates['fedex']
+
   end
 end
