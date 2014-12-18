@@ -13,3 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// $(function() {
+// 
+//   $(".shipping-button").click(function() {
+//     $btn = $(this);
+//     console.log("shipping option clicked");
+//     $.ajax("/", {
+//       type: "GET",
+//       data: $btn.val(),
+//       success: function() {
+//         console.log("post request completed");
+//       }
+//     });
+//   });
+//
+// });

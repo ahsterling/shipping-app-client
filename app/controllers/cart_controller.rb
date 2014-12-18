@@ -18,4 +18,8 @@ class CartController < ApplicationController
     @fedex = rates['fedex']
 
   end
+
+  def update
+    
+  end
 end
