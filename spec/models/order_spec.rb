@@ -12,6 +12,10 @@ RSpec.describe Order, :type => :model do
       order.number = "1234"
       expect(order.valid?).to eq false
     end
+
+    it '' do
+
+    end
   end
 
   describe '#number' do
