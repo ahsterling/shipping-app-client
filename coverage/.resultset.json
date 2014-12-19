@@ -350,19 +350,6 @@
         1,
         null
       ],
-      "/Users/Allie/Ada/rails_projects/shipping-app-client/app/helpers/money_helper.rb": [
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null
-      ],
       "/Users/Allie/Ada/rails_projects/shipping-app-client/app/helpers/orders_helper.rb": [
         1,
         null
@@ -464,6 +451,7 @@
         1,
         null,
         1,
+        0,
         0,
         null,
         null,
@@ -841,6 +829,6 @@
         null
       ]
     },
-    "timestamp": 1419018926
+    "timestamp": 1419024981
   }
 }
