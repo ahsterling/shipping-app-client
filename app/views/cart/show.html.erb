@@ -52,6 +52,8 @@
 </table>
 <% if current_order.address.present? && current_order.shipping_total.present? %>
   <%= button_to "Checkout", complete_order_path, class: "btn btn-default btn-block" %>
+<% elsif !current_order.shipping_total.present? %>
+  Please select a shipping option!
 <% else %>
   <%= link_to "Ready to buy it?", cart_path, class: "checkout btn btn-default btn-block" %>
 <% end %>

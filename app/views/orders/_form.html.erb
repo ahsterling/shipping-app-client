@@ -35,18 +35,19 @@
     <div class='col-lg-5'>
       <h4 class='brand'>Shipping Option</h4>
       <div class='shipping-options well'>
-        <h3>USPS</h3>
-          <div class="shipping-options-set">
-            <table class="table">
-              <% @usps.each do |rate| %>
-                <tr>
-                  <td><%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %></td>
-                  <td><%= rate[0] %></td>
-                  <td><%= format_money(rate[1]) %></td>
-                </tr>
-              <% end %>
-            </table>
-        </div>
+        <% if @usps != nil %>
+          <h3>USPS</h3>
+            <div class="shipping-options-set">
+              <table class="table">
+                <% @usps.each do |rate| %>
+                  <tr>
+                    <td><%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %></td>
+                    <td><%= rate[0] %></td>
+                    <td><%= format_money(rate[1]) %></td>
+                  </tr>
+                <% end %>
+              </table>
+          </div>
           <h3>FEDEX</h3>
           <div class="shipping-options-set">
             <table class="table">
@@ -60,6 +61,9 @@
             </table>
           </div>
           <%= f.submit "Update Total", class: "btn btn-default" %>
+        <% else %>
+          Sorry, an error ocurred! Please check that your address is correct!
+        <% end %>
       </div>
       <%#= f.submit "Checkout", class: "btn btn-success btn-block" %>
     </div>
