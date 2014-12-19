@@ -7,7 +7,7 @@
     <% if current_order.shipping_total %>
       <tr>
         <td width="99%" colspan=2 ></td>
-        <td class='brand brand-smaller'>Shipping:&nbsp&nbsp&nbsp<%= format_money(current_order.shipping_total) %></td>
+        <td class='brand brand-smaller'>Shipping:&nbsp&nbsp&nbsp$<%= Money.new(current_order.shipping_total) %></td>
       </tr>
     <% end %>
     <tr>

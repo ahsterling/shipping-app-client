@@ -43,7 +43,7 @@
                   <tr>
                     <td><%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %></td>
                     <td><%= rate[0] %></td>
-                    <td><%= format_money(rate[1]) %></td>
+                    <td>$<%= Money.new(rate[1]) %></td>
                   </tr>
                 <% end %>
               </table>
@@ -55,7 +55,7 @@
                 <tr>
                   <td><%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %></td>
                   <td><%= rate[0] %></td>
-                  <td><%= format_money(rate[1]) %></td>
+                  <td>$<%= Money.new(rate[1]) %></td>
                 </tr>
               <% end %>
             </table>

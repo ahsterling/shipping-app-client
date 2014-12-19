@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find_by(number: params[:number])
+    @shipping_total = Money.new(@order.shipping_total)
   end
 
   def update
