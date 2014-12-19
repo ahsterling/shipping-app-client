@@ -36,24 +36,30 @@
       <h4 class='brand'>Shipping Option</h4>
       <div class='shipping-options well'>
         <h3>USPS</h3>
-        <%#= form_tag "/orders/update_total", method: :post do %>
-          <% @usps.each do |rate| %>
-            <%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %>
-            <span>
-              <%= rate[0] %>
-              <%= format_money(rate[1]) %>
-            </span><br>
-          <% end %>
+          <div class="shipping-options-set">
+            <table class="table">
+              <% @usps.each do |rate| %>
+                <tr>
+                  <td><%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %></td>
+                  <td><%= rate[0] %></td>
+                  <td><%= format_money(rate[1]) %></td>
+                </tr>
+              <% end %>
+            </table>
+        </div>
           <h3>FEDEX</h3>
-          <% @fedex.each do |rate| %>
-            <%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %>
-            <span>
-              <%= rate[0] %>:
-              <%= format_money(rate[1]) %>
-            </span><br>
-          <% end %>
+          <div class="shipping-options-set">
+            <table class="table">
+              <% @fedex.each do |rate| %>
+                <tr>
+                  <td><%= f.radio_button :shipping_total, rate[1], class: "shipping-button" %></td>
+                  <td><%= rate[0] %></td>
+                  <td><%= format_money(rate[1]) %></td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
           <%= f.submit "Update Total", class: "btn btn-default" %>
-        <%# end %>
       </div>
       <%#= f.submit "Checkout", class: "btn btn-success btn-block" %>
     </div>

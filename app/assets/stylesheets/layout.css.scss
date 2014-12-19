@@ -2,6 +2,10 @@
   margin: 20px auto;
 }
 
+td {
+  padding: 3px;
+}
+
 header {
   height: 50px;
   background-color: #53c5ff;
@@ -41,6 +45,15 @@ i.icon-cart {
   display: none;
 }
 
-.shipping-options {
+.shipping-options h3 {
   // height: 230px;
+  margin-top: 10px;
+}
+
+.shipping-options.well {
+  padding: 5px;
+}
+
+.shipping-options-set {
+  margin-left: 20px;
 }
