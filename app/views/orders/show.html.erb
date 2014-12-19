@@ -8,9 +8,13 @@
 
 <table class='table'>
   <tbody>
-  <tr>
-    <td width="99%" colspan=2></td>
-    <td class='brand'>Total:<%= @order.total.format %></td>
-  </tr>
+    <tr>
+      <td width="99%" colspan=2 ></td>
+      <td class='brand brand-smaller'>Shipping:&nbsp&nbsp&nbsp<%= format_money(@order.shipping_total) %></td>
+    </tr>
+    <tr>
+      <td width="99%" colspan=2></td>
+      <td class='brand'>Total:<%= @order.total.format %></td>
+    </tr>
 </tbody>
 </table>

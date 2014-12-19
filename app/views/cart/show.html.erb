@@ -2,8 +2,24 @@
 
 <%= render current_order %>
 
+<table class='table'>
+  <tbody>
+    <% if current_order.shipping_total %>
+      <tr>
+        <td width="99%" colspan=2 ></td>
+        <td class='brand brand-smaller'>Shipping:&nbsp&nbsp&nbsp<%= format_money(current_order.shipping_total) %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td width="99%" colspan=2></td>
+      <td class='brand'>Total:<%= current_order.total.format %></td>
+    </tr>
+  </tbody>
+</table>
+
 <% if current_order.address.present? %>
   <%= render "orders/form" %>
+
 <% else %>
   <div class='new-address'>
     <div class='col-lg-4'>
@@ -42,14 +58,7 @@
   </div>
 <% end %>
 
-<table class='table'>
-  <tbody>
-    <tr>
-      <td width="99%" colspan=2></td>
-      <td class='brand'>Total:<%= current_order.total.format %></td>
-    </tr>
-  </tbody>
-</table>
+
 <% if current_order.address.present? && current_order.shipping_total.present? %>
   <%= button_to "Checkout", complete_order_path, class: "btn btn-default btn-block" %>
 <% elsif current_order.address.present? && !current_order.shipping_total.present? %>
